@@ -1,14 +1,14 @@
 {
-    "name": "animedoro",
+    "name": "astolfodoro",
     "version": "1.0.0",
-    "description": "Study with animedoro",
+    "description": "Study with astolfo",
     "manifest_version": 3,
-    "author": "Vedant Pol",
+    "author": "Emir Strydex",
     "icons": { "16": "Images/icons/icon16.png",
            "48": "Images/icons/icon48.png",
           "128": "Images/icons/icon128.png" },
     "action":{
         "default_popup": "index.html",
-        "default_title": "animedoro"
+        "default_title": "astolfodoro"
     }
 }
