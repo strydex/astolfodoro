@@ -113,17 +113,19 @@ const startCountdown = function (mins, secs) {
   pause.style.display = "inline";
   finishButton.style.display = "inline";
   play.style.display = "none";
-  interval = setInterval(() => {
+
+  function updateTimer() {
     if (paused) {
-      endTime += 100; // keeps adding 100ms because interval is called every 100ms
+      endTime += 16; // компенсируем задержку кадров (~16 мс)
+      requestAnimationFrame(updateTimer);
       return;
     }
+
     const timeLeft = Math.round((endTime - Date.now()) / 1000);
     if (timeLeft < 0) {
-      beep.play();
+      beep.play().catch(() => console.log("Автоигра блокирована браузером"));
+
       if (watchingAnime) {
-        // working time starts
-        clearInterval(interval);
         nextEventInfo.textContent = "Не смей кликать на следующий эпизод!";
         startButton.textContent = "СТАРТ";
         plus5.style.display = "none";
@@ -138,8 +140,6 @@ const startCountdown = function (mins, secs) {
         addAnimeSession();
         return;
       } else {
-        // anime time starts
-        clearInterval(interval);
         timeMins = animeTime;
         nextEventInfo.textContent = "Теперь ты можешь смотреть Аниме";
         plus5.style.display = "none";
@@ -152,9 +152,14 @@ const startCountdown = function (mins, secs) {
         return;
       }
     }
+
     displayTime(timeLeft);
-  }, 100); // 100ms interval
+    requestAnimationFrame(updateTimer);
+  }
+
+  requestAnimationFrame(updateTimer);
 };
+
 
 const displayTime = function (seconds) {
   let minutesRemaining = Math.floor(seconds / 60);
@@ -187,7 +192,7 @@ const updateEventDetails = function (timestamp) {
   if (watchingAnime) {
     nextEventInfo.textContent = "Аниме закончится в " + hours + ":" + mins;
   } else {
-    nextEventInfo.textContent = "Следующий эпизод через " + hours + ":" + mins;
+    nextEventInfo.textContent = "Следующий эпизод будет в " + hours + ":" + mins;
   }
 };
 
