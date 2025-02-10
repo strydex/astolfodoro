@@ -12,19 +12,9 @@
   transition: left 0.3s; /* Smooth transition */
 }
 
-.sidenav details a {
-  margin: 15px;
-  color: white;
-  text-decoration: underline;
-}
-
-.sidenav details a:hover {
-  color: #BBBBBB;
-}
-
 /* Style page content */
 main, header, footer {
-  transition: filter 0.3s, margin-left 0.3s; /* Smooth transition */
+  transition: filter 0.3s; /* Smooth transition */
 }
 
 body {
@@ -41,10 +31,14 @@ body {
 .sidenav .closebtn {
   color: white;
   position: absolute;
-  top: 0px;
+  top: 15px;
   right: 15px;
-  font-size: 40px;
-  margin-left: 50px;
+  font-size: 30px;
+  cursor: default;
+  background-color: transparent; /* Ensure it doesn't overlay other buttons */
+  border: none; /* Remove any border */
+  padding: 0; /* Remove any padding */
+  z-index: 1001; /* Ensure it stays on top */
 }
 
 .sidenav .closebtn:hover {
@@ -53,7 +47,7 @@ body {
 
 /* The button used to open the sidebar */
 .openbtn {
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
   background-color: #101010AA;
   color: white;
@@ -68,3 +62,4 @@ body {
 .sidenav details {
   padding: 10px;
 }
+

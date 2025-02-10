@@ -26,7 +26,7 @@ const beep = document.querySelector("#notificationSound");
 startButton.textContent = "СТАРТ";
 resetButton.style.display = "none";
 finishButton.style.display = "none";
-finishButton.textContent = "ЗАВЕРШИТЬ";
+finishButton.textContent = "КОНЕЦ";
 plus5.textContent = "+5";
 plus5.style.display = "none";
 pause.style.display = "none";
@@ -34,6 +34,7 @@ play.style.display = "none";
 startButton.addEventListener("click", function () {
   this.blur();
 });
+
 // get values and initialize if non existent
 aniInp.value = localStorage.getItem("animeTime")
   ? localStorage.getItem("animeTime")
@@ -63,9 +64,9 @@ localStorage.setItem("studySessionCounter", studyHours);
 
 function updateSessionCounters() {
   animeSessions = parseInt(localStorage.getItem("animeSessions"), 10);
-  animeSessionCounter.textContent = animeSessions + " Аниме-Сессий";
+  animeSessionCounter.textContent = animeSessions + " Циклов Аниме";
   studySessions = parseInt(localStorage.getItem("studySessions"), 10);
-  studySessionCounter.textContent = studySessions + " Сессий Работы";
+  studySessionCounter.textContent = studySessions + " Циклов Работы";
   animeHours = parseInt(localStorage.getItem("animeSessionCounter"), 10);
   animeHoursCounter.textContent = `${Math.floor(animeHours / 60)}:${
     animeHours % 60
@@ -225,7 +226,6 @@ function resumeCountdown() {
   play.style.display = "none";
 }
 
-
 //startCountdown(1, 5);
 //add5mins();
 //updateEventDetails(endTime)
@@ -273,7 +273,6 @@ function inpchk(inp){
 }
 
 checkPerms();
-
 
 function reset(){
   aftStart.style.display = 'none';

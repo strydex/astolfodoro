@@ -42,6 +42,7 @@ nav a{
     height: calc(100% + 4px);
     /*animation: glowing 20s linear infinite;*/
     opacity: 0;
+    font-family: 'animeace';
     transition: opacity .3s ease-in-out;
     border-radius: 10px;
 }
@@ -67,6 +68,7 @@ nav a{
     background: #111;
     left: 0;
     top: 0;
+    font-family: 'animeace';
     border-radius: 10px;
 }
 

@@ -7,7 +7,7 @@
     <title>АстольфоДоро</title>
     <link rel="stylesheet" href="../button.css">
     <link rel="stylesheet" href="./doro.css">
-    <link rel="stylesheet" href="../sidebar.css">
+    <link rel="stylesheet" href="../sidebardoro.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <audio id="notificationSound">
         <source src="./tone.mp3" type="audio/mpeg">
@@ -32,39 +32,26 @@
                     </button>
                 </a>
 
-
-                <details open>
-                    <summary style="cursor:pointer">
-                        Фембойные Вайбы
-                    </summary>
-                    
-                </details>
                 <details>
                     <summary style="cursor:pointer">Как это работает?</summary>
                     <left>
-                        Ты можешь установить время работы и время аниме<br>
-
-                        Запускается таймер и уведомляет тебя когда время вышло <br>
-
-                        Ты можешь добавить еще 5 минут когда захочешь <br>
-
-                        После времени работы ты можешь смотреть аниме<br>
-
-                        Тебе придут уведомления когда время вышло <br>
-                        
+                        Ты можешь установить время работы и время аниме<br><br>
+                        Запускается таймер и уведомляет тебя когда время вышло <br><br>
+                        Ты можешь добавить еще 5 минут когда захочешь <br><br>
+                        После времени работы ты можешь смотреть аниме<br><br>
+                        Тебе придут уведомления когда время вышло <br><br>
                         Ты можешь запустить таймер снова если хочешь продолжить учиться или работать
                     </left>
                 </details>
-                
             </nav>
         </header>
         <br>
         <main>
-            <div class="counter">‍‍
+            <div class="counter">
                 <span class="before-start">
-                    Минут работы : <input type="number" id="work-input" class="before-start" onchange="inpchk(workInp)"
+                    Минут учёбы: <input type="number" id="work-input" class="before-start" onchange="inpchk(workInp)"
                         oninput="inpvalid(workInp)"><br>
-                    Минут хентая : <input type="number" id="anime-input" class="before-start" onchange="inpchk(aniInp)"
+                    Минут аниме: <input type="number" id="anime-input" class="before-start" onchange="inpchk(aniInp)"
                         oninput="inpvalid(aniInp)">
                 </span>
                 <span class="aft-start">
@@ -96,18 +83,15 @@
                 <h2>+5</h2>
             </button>
             <button class="button-black" id="pause" type="button" onclick="pauseCountdown()">
-                <i class="material-icons">ПАУЗА</i>
+                </h2>ПАУЗА</h2>
             </button>
             <button class="button-black" id="play" type="button" onclick="resumeCountdown()">
                 <i class="material-icons">play_arrow</i>
             </button>
-
-
         </main>
-
     </center>
     <script src="./doro.js"></script>
-    <script src="../sidebar.js"></script>
+    <script src="../sidebardoro.js"></script>
 </body>
 
 </html>
